@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración - RifApp</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 {
+      color: #004aad;
+    }
+    #login, #admin-panel {
+      max-width: 400px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.5rem;
+      background: #004aad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🔐 Panel de Administración - RifApp</h1>
+
+<div id="login">
+  <p>Ingresa la contraseña para acceder al panel de administración:</p>
+  <input type="password" id="password" placeholder="Contraseña" />
+  <button onclick="login()">Ingresar</button>
+</div>
+
+<div id="admin-panel" class="hidden">
+  <h2>Bienvenido, administrador 👋</h2>
+  <ul>
+    <li>➕ Crear nueva rifa</li>
+    <li>👥 Ver participantes (ficticio)</li>
+    <li>🏆 Agregar ganadores</li>
+  </ul>
+  <button onclick="logout()">Cerrar sesión</button>
+</div>
+
+<script>
+  const passwordCorrecta = "admin123";
+
+  function login() {
+    const pw = document.getElementById("password").value;
+    if (pw === passwordCorrecta) {
+      document.getElementById("login").classList.add("hidden");
+      document.getElementById("admin-panel").classList.remove("hidden");
+    } else {
+      alert("❌ Contraseña incorrecta.");
+    }
+  }
+
+  function logout() {
+    document.getElementById("admin-panel").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+    document.getElementById("password").value = "";
+  }
+</script>
+
+</body>
+</html>
