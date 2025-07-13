@@ -1,170 +1,261 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RifApp - Tu suerte comienza aquí</title>
+  <title>RifApp - Sorteos y Rifas en Línea</title>
   <style>
-    body {.ganadores {
-  padding: 40px 20px;
-  background-color: #f4f4f4;
-  text-align: center;
-}
-
-.ganadores h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.galeria-ganadores {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.ganador {
-  width: 250px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.ganador:hover {
-  transform: scale(1.03);
-}
-
-.ganador img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.ganador h3 {
-  font-size: 1.2em;
-  margin: 0;
-  color: #222;
-}
-
-.ganador p {
-  margin: 5px 0;
-  color: #555;
-}
-      font-family: 'Segoe UI', sans-serif;
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
       color: #333;
     }
-    header {
-      background: linear-gradient(135deg, #004aad, #0074e4);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
+
+    /* Rifas activas (ejemplo) */
+    .rifas-activas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #004aad;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      background: #ffcc00;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
+
+    .rifa {
+      background: white;
+      padding: 20px;
       border-radius: 10px;
-      transition: background 0.3s ease;
-    }
-    .cta:hover {
-      background: #ffc107;
-    }
-    footer {
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
-      background: #eee;
-      padding: 1rem;
-      margin-top: 3rem;
+    }
+
+    .rifa img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Ganadores */
+    .ganadores {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .galeria-ganadores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .ganador {
+      width: 250px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .ganador:hover {
+      transform: scale(1.03);
+    }
+
+    .ganador img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .ganador h3 {
+      font-size: 1.2em;
+      margin: 0;
+      color: #222;
+    }
+
+    .ganador p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    /* Panel Admin */
+    .admin-panel {
+      background-color: #eaf4ff;
+      color: #222;
+      border-top: 4px solid #007acc;
+    }
+
+    .admin-panel h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .admin-section {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .admin-section h3 {
+      margin-bottom: 15px;
+      color: #007acc;
+    }
+
+    .admin-section form input,
+    .admin-section form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .admin-section form button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .admin-section form button:hover {
+      background-color: #005e9e;
+    }
+
+    .btn-salir {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-salir:hover {
+      background-color: #c62828;
     }
   </style>
-  
 </head>
 <body>
 
 <header>
-  <h1>RifApp</h1>
-  <p>¡Participa en rifas digitales y gana premios increíbles desde tu celular!</p>
-  <a href="#premios" class="cta">Ver rifas activas</a>
+  <h1>🎟️ RifApp</h1>
+  <p>Participa y gana grandes premios</p>
 </header>
 
-<section class="section" id="como-funciona">
-  <h2>¿Cómo funciona?</h2>
-  <p>Participar es fácil:</p>
-  <ol>
-    <li>Selecciona una rifa activa.</li>
-    <li>Compra tus boletos desde tu celular.</li>
-    <li>Espera el sorteo y ¡cruza los dedos!</li>
-  </ol>
+<section>
+  <h2>🔥 Rifas Activas</h2>
+  <div class="rifas-activas">
+    <div class="rifa">
+      <img src="https://i.imgur.com/lTyKPNI.jpg" alt="Rifa Moto">
+      <h3>Moto Honda XR150</h3>
+      <p>$20.000 por número</p>
+      <p>Sortea: 30 de julio de 2025</p>
+    </div>
+    <!-- Puedes duplicar este bloque para más rifas -->
+  </div>
 </section>
 
-<section class="section" id="premios">
-  <h2>Rifas activas</h2>
-  <ul>
-    <li>🏍️ Moto AKT 2024 - Sorteo: 20 de julio</li>
-    <li>📱 iPhone 15 Pro Max - Sorteo: 5 de agosto</li>
-    <li>💰 Bono de $1.000.000 COP - Sorteo semanal</li>
-  </ul>
+<!-- GANADORES -->
+<section id="ganadores" class="ganadores">
+  <h2>🎉 Ganadores recientes</h2>
+  <div class="galeria-ganadores">
+    <div class="ganador">
+      <img src="https://i.imgur.com/Z1gA1lW.jpg" alt="Juan Pérez - Ganador Moto">
+      <h3>Juan Pérez</h3>
+      <p>🏍️ Ganó una Moto Honda XR150</p>
+      <p>📅 12 de julio de 2025</p>
+    </div>
+    <div class="ganador">
+      <img src="https://i.imgur.com/lTyKPNI.jpg" alt="Laura Gómez - Ganadora TV">
+      <h3>Laura Gómez</h3>
+      <p>📺 Ganó un Smart TV Samsung 55”</p>
+      <p>📅 5 de julio de 2025</p>
+    </div>
+    <div class="ganador">
+      <img src="https://i.imgur.com/lBBM5XM.jpg" alt="Carlos Ramírez - Ganador iPhone">
+      <h3>Carlos Ramírez</h3>
+      <p>📱 Ganó un iPhone 15 Pro</p>
+      <p>📅 30 de junio de 2025</p>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="ganadores">
-  <h2>Ganadores recientes</h2>
-  <ul>
-    <li>🎉 Juan Pérez - Ganó un TV LG 50”</li>
-    <li>🎉 Ana Gómez - Ganó $500.000 COP</li>
-  </ul>
+<!-- ADMIN -->
+<section id="admin" class="admin-panel" style="display:none;">
+  <h2>🔧 Panel de Administrador</h2>
+
+  <!-- Crear nueva rifa -->
+  <div class="admin-section">
+    <h3>➕ Crear nueva rifa</h3>
+    <form onsubmit="event.preventDefault(); alert('Rifa publicada (solo visual)');">
+      <input type="text" placeholder="Título del sorteo" required>
+      <input type="number" placeholder="Precio por número" required>
+      <input type="date" required>
+      <input type="number" placeholder="Cantidad de boletos" required>
+      <input type="file" accept="image/*">
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+
+  <!-- Publicar ganador -->
+  <div class="admin-section">
+    <h3>🏆 Publicar ganador</h3>
+    <form onsubmit="event.preventDefault(); alert('Ganador publicado (solo visual)');">
+      <input type="text" placeholder="Nombre del ganador" required>
+      <input type="text" placeholder="Premio ganado" required>
+      <input type="date" required>
+      <input type="file" accept="image/*">
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <!-- Subir imagen de sorteo -->
+  <div class="admin-section">
+    <h3>🖼️ Subir imagen de sorteo</h3>
+    <form onsubmit="event.preventDefault(); alert('Imagen cargada (solo visual)');">
+      <input type="text" placeholder="Descripción de la imagen" required>
+      <input type="file" accept="image/*" required>
+      <button type="submit">Subir</button>
+    </form>
+  </div>
+
+  <button onclick="cerrarPanel()" class="btn-salir">Cerrar sesión</button>
 </section>
 
-<section class="section" id="pagos">
-  <h2>💳 ¿Cómo pagar?</h2>
-  <p>Realiza tu pago desde tu celular a cualquiera de estas opciones:</p>
-  <ul>
-    <li>📲 <strong>Nequi:</strong> <span style="color: #e6007e;">300 123 4567</span></li>
-    <li>🏦 <strong>Bancolombia:</strong> <span style="color: #ffcc00;">12345678901</span></li>
-  </ul>
-  <p>Después de realizar el pago, envía una foto del comprobante por WhatsApp:</p>
-  <a href="https://wa.me/573001234567" target="_blank" class="cta">📤 Enviar comprobante</a>
-</section>
+<!-- JS -->
+<script>
+  function cerrarPanel() {
+    document.getElementById('admin').style.display = 'none';
+  }
 
-<section class="section" id="contacto">
-  <h2>Contáctanos</h2>
-  <p>
-    WhatsApp: <a href="https://wa.me/573000000000" target="_blank">+57 300 000 0000</a><br>
-    Correo: <a href="mailto:contacto@rifapp.com">contacto@rifapp.com</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 RifApp - Todos los derechos reservados |
-    <a href="admin.html" style="color:#666; text-decoration:none;">Admin</a>
-  </p>
-</footer>
+  const clave = prompt("🔒 Ingresa clave de administrador:");
+  if (clave === "rifapp2025") {
+    document.getElementById("admin").style.display = "block";
+  } else {
+    alert("Acceso denegado.");
+  }
+</script>
 
 </body>
 </html>
