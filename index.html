@@ -6,7 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RifApp - Tu suerte comienza aquí</title>
   <style>
-    body {
+    body {.ganadores {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.ganadores h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.galeria-ganadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.ganador {
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.ganador:hover {
+  transform: scale(1.03);
+}
+
+.ganador img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.ganador h3 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #222;
+}
+
+.ganador p {
+  margin: 5px 0;
+  color: #555;
+}
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: #f4f4f4;
@@ -56,6 +104,7 @@
       margin-top: 3rem;
     }
   </style>
+  
 </head>
 <body>
 
